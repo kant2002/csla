@@ -4,11 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UseLocalProject>true</UseLocalProject>
   </PropertyGroup>
 
   <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Packages.props, $(MSBuildThisFileDirectory)..))" />
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Source\Csla.Blazor\Csla.Blazor.csproj" Condition="$(UseLocalProject) == true" />
     <ProjectReference Include="..\BlazorExample.Client\BlazorExample.Client.csproj" />
     <ProjectReference Include="..\BusinessLibrary\BusinessLibrary.csproj" />
     <ProjectReference Include="..\DataAccess.EF\DataAccess.EF.csproj" />
@@ -17,6 +19,9 @@
     <PackageReference Include="Csla.AspNetCore" />
     <PackageReference Include="Csla.Blazor" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" />
+    <PackageReference Include="Csla.AspNetCore" Version="9.0.0-R24051102" />
+    <PackageReference Include="Csla.Blazor" Version="9.0.0-R24051102" Condition="$(UseLocalProject) != true" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.1" />
   </ItemGroup>
 
 </Project>

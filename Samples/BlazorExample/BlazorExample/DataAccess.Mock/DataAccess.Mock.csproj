@@ -3,12 +3,15 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>DataAccess.Mock</AssemblyName>
+    <UseLocalProject>true</UseLocalProject>
   </PropertyGroup>
 
   <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Packages.props, $(MSBuildThisFileDirectory)..))" />
   
   <ItemGroup>
     <PackageReference Include="Csla" />
+    <PackageReference Include="Csla" Version="9.0.0-R24051102" Condition="$(UseLocalProject) != true" />
+    <ProjectReference Include="..\Csla\Csla.csproj" Condition="$(UseLocalProject) != true" />
   </ItemGroup>
 
   <ItemGroup>
