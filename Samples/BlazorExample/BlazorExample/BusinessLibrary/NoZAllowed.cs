@@ -15,4 +15,16 @@ namespace BusinessLibrary
         context.AddErrorResult("No letter Z allowed");
     }
   }
+
+  public class NoZAllowedAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute
+  {
+
+    public override bool IsValid(object? value)
+    {
+      var text = (string?)value;
+      return !text.ToLower().Contains("z");
+    }
+
+    public override string FormatErrorMessage(string name) => "No letter Z allowed";
+  }
 }
