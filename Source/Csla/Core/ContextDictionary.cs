@@ -76,25 +76,33 @@ namespace Csla.Core
     /// <inheritdoc cref="System.Collections.IDictionary.IsReadOnly"/>
     public bool IsReadOnly
     {
-      get => ((IDictionary)this).IsReadOnly;
+      get => false;
     }
 
     /// <inheritdoc cref="System.Collections.IDictionary.IsFixedSize"/>
     public bool IsFixedSize
     {
-      get => ((IDictionary)this).IsFixedSize;
+      get => false;
     }
 
     /// <inheritdoc cref="System.Collections.IDictionary.Add(object, object?)"/>
     public void Add(object key, object value)
     {
-      ((IDictionary)this).Add(key, value);
+      bool added = TryAdd(key, value);
+      if (!added)
+      {
+        throw new ArgumentException("An item with the same key has already been added.");
+      }
     }
 
     /// <inheritdoc cref="System.Collections.IDictionary.Remove(object)"/>
     public void Remove(object key)
     {
-      ((IDictionary)this).Remove(key);
+      var removed = TryRemove(key, out var _);
+      if (!removed)
+      {
+        throw new NotSupportedException("The key does not exist in the dictionary.");
+      }
     }
 
     #endregion
@@ -104,20 +112,20 @@ namespace Csla.Core
     /// <inheritdoc cref="System.Collections.ICollection.SyncRoot"/>
     public object SyncRoot
     {
-      get => ((IDictionary)this).SyncRoot;
+      get => throw new NotSupportedException("SyncRoot NotSupported");
     }
 
     /// <inheritdoc cref="System.Collections.ICollection.IsSynchronized"/>
     public bool IsSynchronized
     {
-      get => ((ICollection)this).IsSynchronized;
+      get => false;
     }
 
     /// <inheritdoc cref="System.Collections.ICollection.CopyTo(Array, int)"/>
-    public void CopyTo(Array array, int index) 
-    {
-      ((ICollection)this).CopyTo(array, index);
-    }
+    //public void CopyTo(Array array, int index) 
+    //{
+    //  ((ICollection)this).CopyTo(array, index);
+    //}
 
     #endregion
   }

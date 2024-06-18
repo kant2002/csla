@@ -38,8 +38,6 @@ else
         <CslaValidationMessages For="() => vm.Model.Name" />
         <button type="submit" disabled="@(!vm.Model.IsSavable)">Save</button>
     </EditForm>
-
-  @* <button @onclick="vm.SaveAsync" disabled="@(!vm.Model.IsSavable)">Save person</button> *@
 }
 
 @code {
