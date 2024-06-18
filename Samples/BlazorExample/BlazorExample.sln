@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csla.Blazor", "..\..\Source
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csla", "..\..\Source\Csla\Csla.csproj", "{BD06309F-5452-4C9B-8BAA-69324BF7AA43}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csla.AspNetCore", "..\..\Source\Csla.AspNetCore\Csla.AspNetCore.csproj", "{1ACB7C14-DB1B-44EF-AE5F-085F6072FCDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,11 +65,18 @@ Global
 		{BD06309F-5452-4C9B-8BAA-69324BF7AA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD06309F-5452-4C9B-8BAA-69324BF7AA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD06309F-5452-4C9B-8BAA-69324BF7AA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ACB7C14-DB1B-44EF-AE5F-085F6072FCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ACB7C14-DB1B-44EF-AE5F-085F6072FCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ACB7C14-DB1B-44EF-AE5F-085F6072FCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ACB7C14-DB1B-44EF-AE5F-085F6072FCDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EAB52E27-B5C0-49FC-9D6D-696CE403B9FD}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\..\Source\Csla.Web.Mvc.Shared\Csla.Web.Mvc.Shared.projitems*{1acb7c14-db1b-44ef-ae5f-085f6072fcdd}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
