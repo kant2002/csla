@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
-    <ProjectReference Include="..\Csla\Csla.csproj" Condition="$(UseLocalProject) == true" />
+    <ProjectReference Include="..\..\..\..\Source\Csla\Csla.csproj" Condition="$(UseLocalProject) == true" />
   </ItemGroup>
 
 </Project>

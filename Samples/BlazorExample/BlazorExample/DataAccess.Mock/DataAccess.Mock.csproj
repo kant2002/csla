@@ -9,7 +9,7 @@
   
   <ItemGroup>
     <PackageReference Include="Csla" Condition="$(UseLocalProject) != true" />
-    <ProjectReference Include="..\Csla\Csla.csproj" Condition="$(UseLocalProject) == true" />
+    <ProjectReference Include="..\..\..\..\Source\Csla\Csla.csproj" Condition="$(UseLocalProject) == true" />
   </ItemGroup>
 
   <ItemGroup>

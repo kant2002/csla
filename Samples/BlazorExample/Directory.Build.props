@@ -1,5 +1,5 @@
 <Project>
   <PropertyGroup>
-    <UseLocalProject>false</UseLocalProject>
+    <UseLocalProject>true</UseLocalProject>
   </PropertyGroup>
 </Project>
