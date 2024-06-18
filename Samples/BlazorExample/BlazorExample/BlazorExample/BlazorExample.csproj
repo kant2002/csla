@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Source\Csla.Blazor\Csla.Blazor.csproj" Condition="$(UseLocalProject) == true" />
+    <ProjectReference Include="..\..\..\..\Source\Csla.AspNetCore\Csla.AspNetCore.csproj" Condition="$(UseLocalProject) == true" />
     <ProjectReference Include="..\BlazorExample.Client\BlazorExample.Client.csproj" />
     <ProjectReference Include="..\BusinessLibrary\BusinessLibrary.csproj" />
     <ProjectReference Include="..\DataAccess.EF\DataAccess.EF.csproj" />
